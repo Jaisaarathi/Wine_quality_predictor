@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Wine Quality Predictor</title>
+</head>
+<body>
+    <h1>Wine Quality Predictor</h1>
+    <form method="post">
+        <label for="fixed_acidity">Fixed Acidity:</label>
+        <input type="text" name="fixed_acidity" required><br>
+
+        <label for="volatile_acidity">Volatile Acidity:</label>
+        <input type="text" name="volatile_acidity" required><br>
+
+        <label for="volatile_acidity">Citric acid:</label>
+        <input type="text" name="citric_acid" required><br>
+        
+        <label for="volatile_acidity">Residual Sugar:</label>
+        <input type="text" name="residual_sugar" required><br>
+        
+        <label for="volatile_acidity">Chlorides:</label>
+        <input type="text" name="chlorides" required><br>
+        
+        <label for="volatile_acidity">Free Sulfer Dioxide:</label>
+        <input type="text" name="free_sulfur_dioxide" required><br>
+        
+        <label for="volatile_acidity">Total Sulfer Dioxide:</label>
+        <input type="text" name="total_sulfur_dioxide" required><br>
+        
+        <label for="volatile_acidity">Density:</label>
+        <input type="text" name="density" required><br>
+        
+        <label for="volatile_acidity">pH:</label>
+        <input type="text" name="pH" required><br>
+        
+        <label for="volatile_acidity">Sulphates:</label>
+        <input type="text" name="sulphates" required><br>
+        
+        <label for="volatile_acidity">Alcohol:</label>
+        <input type="text" name="alcohol" required><br>
+        <!-- Add similar input fields for other features -->
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction is not none %}
+        <p>Predicted Wine Quality (scaled to 100): {{ prediction }}</p>
+    {% endif %}
+</body>
+</html>
